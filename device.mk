@@ -219,5 +219,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/samsung/fascinatemtd/recovery_kernel:recovery_kernel
 
+# wifi
+PRODUCT_PACKAGES += libnetcmdiface
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
 
