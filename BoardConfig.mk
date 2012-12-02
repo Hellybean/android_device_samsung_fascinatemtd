@@ -25,6 +25,7 @@ BOARD_USES_LIBSECRIL_STUB := true
 # Use the non-open-source parts, if they're present
 -include vendor/samsung/fascinatemtd/BoardConfigVendor.mk
 
+TARGET_ARCH := arm
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv7-a-neon
@@ -88,7 +89,7 @@ TARGET_KERNEL_SOURCE := kernel/samsung/aries
 TARGET_KERNEL_CONFIG := cyanogenmod_fascinatemtd_defconfig
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 7864320
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 262144000
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 419430400
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 1665130496
 BOARD_FLASH_BLOCK_SIZE := 4096
 
@@ -125,3 +126,7 @@ BOARD_ALLOW_SUSPEND_IN_CHARGER := true
 
 # SkTextBox for libtvout
 BOARD_USES_SKTEXTBOX := true
+
+# Bluetooth
+BOARD_BLUETOOTH_LIBBT_VNDCFG := device/samsung/fascinatemtd/libbt_vndcfg.txt
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/fascinatemtd/bluetooth

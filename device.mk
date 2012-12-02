@@ -43,8 +43,7 @@
 PRODUCT_COPY_FILES := \
 	device/samsung/fascinatemtd/vold.fstab:system/etc/vold.fstab \
 	device/samsung/aries-common/egl.cfg:system/lib/egl/egl.cfg \
-	device/samsung/aries-common/mxt224_ts_input.idc:system/usr/idc/mxt224_ts_input.idc \
-	device/samsung/aries-common/main.conf:system/etc/bluetooth/main.conf
+	device/samsung/aries-common/mxt224_ts_input.idc:system/usr/idc/mxt224_ts_input.idc
 
 # Init files
 PRODUCT_COPY_FILES += \
@@ -55,6 +54,11 @@ PRODUCT_COPY_FILES += \
 	device/samsung/fascinatemtd/ueventd.aries.rc:root/ueventd.aries.rc \
 	device/samsung/aries-common/fstab.aries:root/fstab.aries \
 	device/samsung/aries-common/setupdatadata.sh:root/sbin/setupdatadata.sh
+
+# Recovery filemanager
+PRODUCT_COPY_FILES += \
+	device/samsung/aries-common/aroma/aromafm.zip:recovery/root/tmp/aromafm.zip \
+	device/samsung/aries-common/aroma/aromafm.zip.cfg:recovery/root/tmp/aromafm.zip.cfg
 
 # Prebuilt kl keymaps
 PRODUCT_COPY_FILES += \
