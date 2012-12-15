@@ -39,6 +39,8 @@
 # of hardware-specific resource overrides, typically the frameworks and
 # application settings that are stored in resourced.
 
+TARGET_KERNEL_CUSTOM_TOOLCHAIN_LINARO := linaro
+
 # These are the hardware-specific configuration files
 PRODUCT_COPY_FILES := \
 	device/samsung/fascinatemtd/vold.fstab:system/etc/vold.fstab \
