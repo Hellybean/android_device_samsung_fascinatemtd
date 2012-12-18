@@ -128,5 +128,5 @@ BOARD_ALLOW_SUSPEND_IN_CHARGER := true
 BOARD_USES_SKTEXTBOX := true
 
 # Bluetooth
-BOARD_BLUETOOTH_LIBBT_VNDCFG := device/samsung/fascinatemtd/libbt_vndcfg.txt
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/fascinatemtd/bluetooth
+BOARD_BLUEDROID_VENDOR_CONF := device/samsung/aries-common/libbt_vndcfg.txt

@@ -17,6 +17,6 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#define BTM_DEF_LOCAL_NAME   "Samsung Fascinate"
+#define BTM_DEF_LOCAL_NAME   "Samsung SCH-I500"
 
 #endif
