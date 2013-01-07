@@ -85,7 +85,7 @@ PRODUCT_PACKAGES += \
 
 # BT MAC fix
 PRODUCT_PACKAGES += \
-	bdaddr_read-cdma
+	bdaddr_read
 
 # Usb accessory
 PRODUCT_PACKAGES += \
