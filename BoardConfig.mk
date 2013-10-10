@@ -28,8 +28,13 @@ BOARD_USES_LIBSECRIL_STUB := true
 TARGET_ARCH := arm
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
+TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
-ARCH_ARM_HAVE_TLS_REGISTER := true
+TARGET_ARCH_VARIANT_CPU := cortex-a8
+TARGET_CPU_VARIANT := cortex-a8
+
+# Dalvik startup with low memory footprint
+TARGET_ARCH_LOWMEM := true
 
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
@@ -37,7 +42,6 @@ TARGET_NO_RADIOIMAGE := true
 TARGET_PROVIDES_INIT := true
 TARGET_BOARD_PLATFORM := s5pc110
 TARGET_BOOTLOADER_BOARD_NAME := aries
-TARGET_RECOVERY_INITRC := device/samsung/aries-common/recovery.rc
 
 BOARD_MOBILEDATA_INTERFACE_NAME := "ppp0"
 BOARD_UMS_LUNFILE := /sys/class/android_usb/android0/f_mass_storage/lun/file
@@ -72,6 +76,8 @@ TARGET_PROVIDES_LIBAUDIO := true
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/fascinatemtd/bluetooth
+BOARD_BLUEDROID_VENDOR_CONF := device/samsung/aries-common/libbt_vndcfg.txt
 
 # Video Devices
 BOARD_V4L2_DEVICE := /dev/video1
@@ -117,15 +123,34 @@ BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/aries-common/recovery/graphics.
 BOARD_USES_BML_OVER_MTD := true
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/fascinatemtd/shbootimg.mk
 TARGET_RECOVERY_PRE_COMMAND := "echo 1 > /cache/.startrecovery; sync;"
+TARGET_RECOVERY_FSTAB := device/samsung/fascinatemtd/fstab.aries
+RECOVERY_FSTAB_VERSION := 2
 
 # Charging mode
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/charging_mode_booting
 # Suspend in charger to disable capacitive keys
-BOARD_ALLOW_SUSPEND_IN_CHARGER := true
+BOARD_CHARGER_ENABLE_SUSPEND := true
 
 # SkTextBox for libtvout
 BOARD_USES_SKTEXTBOX := true
 
-# Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/fascinatemtd/bluetooth
-BOARD_BLUEDROID_VENDOR_CONF := device/samsung/aries-common/libbt_vndcfg.txt
+# Hardware tunables
+BOARD_HARDWARE_CLASS := device/samsung/aries-common/cmhw/
+
+# SELinux
+BOARD_SEPOLICY_DIRS += \
+    device/samsung/aries-common/sepolicy
+
+BOARD_SEPOLICY_UNION += \
+    bdaddr_read.te \
+    device.te \
+    domain.te \
+    file_contexts \
+    geomagneticd.te \
+    mediaserver.te \
+    orientationd.te \
+    property_contexts \
+    pvrsrvinit.te \
+    rild.te \
+    tvouthack.te \
+    tvoutserver.te
