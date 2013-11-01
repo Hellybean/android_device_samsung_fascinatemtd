@@ -40,6 +40,9 @@
 # application settings that are stored in resourced.
 
 TARGET_KERNEL_CUSTOM_TOOLCHAIN_LINARO := linaro
+TOOLCHAIN_GNUEABIHF := true
+
+FULL_LINARO := true
 
 # These are the hardware-specific configuration files
 PRODUCT_COPY_FILES := \
